@@ -13,6 +13,7 @@
   ],
   "main": "generators/app/index.js",
   "keywords": [
+    "yeoman-generator",
     "webpack",
     "angular",
     "es6",
