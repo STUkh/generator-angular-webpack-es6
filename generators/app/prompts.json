@@ -1,0 +1,133 @@
+[
+  {
+    "type": "input",
+    "name": "appName",
+    "message": "Your application name",
+    "default": "myNgApp"
+  },
+  {
+    "type": "confirm",
+    "name": "bootstrapSass",
+    "message": "Would you like to include Bootstrap for Sass?",
+    "default": true
+  },
+  {
+    "type": "checkbox",
+    "name": "angularModules",
+    "message": "What Angular modules would you like to have?",
+    "choices": [
+      {
+        "value": {
+          "key": "animate",
+          "module": "ngAnimate",
+          "package": "angular-animate"
+        },
+        "name": "angular-animate.js (enable animation features)",
+        "checked": true
+      },
+      {
+        "value": {
+          "key": "cookies",
+          "module": "ngCookies",
+          "package": "angular-cookies"
+        },
+        "name": "angular-cookies.js (handle cookie management)",
+        "checked": true
+      },
+      {
+        "value": {
+          "key": "touch",
+          "module": "ngTouch",
+          "package": "angular-touch"
+        },
+        "name": "angular-touch.js (for mobile development)",
+        "checked": true
+      },
+      {
+        "value": {
+          "key": "sanitize",
+          "module": "ngSanitize",
+          "package": "angular-sanitize"
+        },
+        "name": "angular-sanitize.js (to securely parse and manipulate HTML)",
+        "checked": true
+      },
+      {
+        "value": {
+          "key": "messages",
+          "module": "ngMessages",
+          "package": "angular-messages"
+        },
+        "name": "angular-messages.js (enhanced support for displaying messages within templates)",
+        "checked": true
+      },
+      {
+        "value": {
+          "key": "aria",
+          "module": "ngAria",
+          "package": "angular-aria"
+        },
+        "name": "angular-aria.js (support for common ARIA attributes)",
+        "checked": true
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "name": "jQuery",
+    "message": "Do you need jQuery?",
+    "choices": [
+      {
+        "value": {
+          "key": "jquery2",
+          "package": "jquery@2",
+          "import": false
+        },
+        "name": "jQuery 2.x (new version, lighter, IE9+)"
+      },
+      {
+        "value": {
+          "key": "jquery1",
+          "package": "jquery@1"
+        },
+        "name": "jQuery 1.x (branch still supporting IE6, 7 and 8)"
+      },
+      {
+        "value": {
+          "key": "jqLite"
+        },
+        "name": "None (Angular will use its own jqLite)"
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "name": "resource",
+    "message": "Would you like to use a REST resource library?",
+    "choices": [
+      {
+        "value": {
+          "key": "angular-resource",
+          "module": "ngResource",
+          "package": "angular-resource"
+        },
+        "name": "ngResource, the official support for RESTful services"
+      },
+      {
+        "value": {
+          "key": "restangular",
+          "module": "restangular",
+          "package": "restangular"
+        },
+        "name": "Restangular, an alternative service to handle RESTful requests"
+      },
+      {
+        "value": {
+          "key": "$http",
+          "module": null
+        },
+        "name": "None, $http is enough!"
+      }
+    ]
+  }
+]
