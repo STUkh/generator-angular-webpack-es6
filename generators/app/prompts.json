@@ -129,5 +129,11 @@
         "name": "None, $http is enough!"
       }
     ]
+  },
+  {
+    "type": "confirm",
+    "name": "ocLazyLoad",
+    "message": "Would you like to include angularOclazyLoad plugin to load angular modules asynchronously.",
+    "default": true
   }
 ]

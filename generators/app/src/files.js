@@ -63,9 +63,10 @@ module.exports = function (AngularWebpackES6Generator) {
             this.templatePath('_src/_app/_index.config.js'),
             this.destinationPath('src/app/index.config.js')
         );
-        this.fs.copy(
+        this.fs.copyTpl(
             this.templatePath('_src/_app/_index.routes.js'),
-            this.destinationPath('src/app/index.routes.js')
+            this.destinationPath('src/app/index.routes.js'),
+            this
         );
         this.fs.copy(
             this.templatePath('_src/_app/_index.run.js'),
@@ -92,15 +93,24 @@ module.exports = function (AngularWebpackES6Generator) {
             this.destinationPath('src/app/core/directives')
         );
 
-        this.fs.copy(
+        this.fs.copyTpl(
             this.templatePath('_src/_app/_core/_services/**/*'),
-            this.destinationPath('src/app/core/services')
+            this.destinationPath('src/app/core/services'),
+            this
         );
 
-        this.fs.copy(
-            this.templatePath('_src/_app/_pages/**/*'),
-            this.destinationPath('src/app/pages')
+        this.fs.copyTpl(
+            this.templatePath('_src/_app/_pages/main/**/*'),
+            this.destinationPath('src/app/pages/main'),
+            this
         );
+
+        if (this.props.ocLazyLoad) {
+            this.fs.copy(
+                this.templatePath('_src/_app/_pages/async-page-example/**/*'),
+                this.destinationPath('src/app/pages/async-page-example')
+            );
+        }
     };
 
 };

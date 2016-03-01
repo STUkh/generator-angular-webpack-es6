@@ -9,6 +9,13 @@ module.exports = function (AngularWebpackES6Generator) {
 
   AngularWebpackES6Generator.prototype.defaultImports = function defaultImports() {
     imports.push(this.props.resource);
+
+    if (this.props.ocLazyLoad) {
+      imports.push({
+        module: "oc.lazyLoad",
+        package: "oclazyload"
+      });
+    }
   };
 
   /**

@@ -37,7 +37,7 @@ yo angular-webpack-es6
 ```
 
 #### TODO:
-> * Add better examples with lazy-loaded modules
+> * ~~Add better examples with lazy-loaded modules~~ Added in 0.1.2
 > * Rewrite generator files copy method
 
 #### Inspired by [generator-gulp-angular](https://github.com/Swiip/generator-gulp-angular) project.
