@@ -1,21 +1,38 @@
-## Work still in progress...
+# generator-angular-webpack-es6
 
-## Installation
+> Yeoman generator for AngularJS + Webpack with ES6 and SASS.
 
-First, install [Yeoman](http://yeoman.io) and generator-angular-webpack-es6 using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
+> * SASS as CSS preprocessor
+> * Angular UI router as default router already included
+> * Optional installation bootstrap-sass source
+> * Optional angular modules installation
+> * All necessary webpack loaders already included (Sass, Images, Fonts, ngAnnotate, ngTemplateCache, etc.)
+> * Config has options for development and production mode
 
-```bash
-npm install -g yo
+> Use only webpack with npm. No external dependencies like bower, grunt, gulp...
+
+### Install
+
+##### Install required tools `yo`, and `webpack`:
+```
+npm install -g yo webpack
+```
+
+##### Install `generator-angular-webpack-es6`:
+```
 npm install -g generator-angular-webpack-es6
 ```
 
-Then generate your new project:
+### Run
 
-```bash
+##### Create a new directory, and go into:
+```
+mkdir my-new-project && cd $_
+```
+
+##### Run `yo angular-webpack-es6`, and select desired technologies:
+```
 yo angular-webpack-es6
 ```
 
-## Contributing
-
- * Run ``` npm link ``` in generator root folder to link generator package with global node packages.
- * Then you can run generator locally.
+## Inspired by [generator-gulp-angular](https://github.com/Swiip/generator-gulp-angular) project.
