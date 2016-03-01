@@ -6,21 +6,22 @@ import run from './index.run';
 
 
 const App = angular.module(
-  '<%= name %>', [
-   // plugins
-   require('angular-ui-router'),
+  "<%= props.appName %>", [
+    // plugins
+    require('angular-ui-router'),
+    <%- modulesDependencies %>,
 
     // core
-    require('./core/core.module').name,
+    require("./core/core.module").name,
 
     // components
-    require('./index.components').name,
+    require("./index.components").name,
 
     // routes
-    require('./index.routes').name,
+    require("./index.routes").name,
 
     // pages
-    require('./pages/main/main.module').name
+    require("./pages/main/main.module").name
 
   ]
 );

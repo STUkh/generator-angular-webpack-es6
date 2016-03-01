@@ -1,6 +1,6 @@
 {
   "name": "generator-angular-webpack-es6",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "angular webpack es6",
   "homepage": "",
   "author": {
@@ -21,6 +21,7 @@
   ],
   "dependencies": {
     "chalk": "^1.1.1",
+    "lodash": "^4.5.1",
     "mkdirp": "^0.5.1",
     "yeoman-generator": "^0.22.5",
     "yosay": "^1.1.0"

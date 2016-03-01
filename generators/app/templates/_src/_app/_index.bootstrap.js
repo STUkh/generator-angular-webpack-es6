@@ -9,7 +9,7 @@ import "./index.module";
 import "../assets/styles/sass/index.scss";
 
 angular.element(document).ready(function () {
-  angular.bootstrap(document, ['<%= name %>'], {
+  angular.bootstrap(document, ['<%= props.appName %>'], {
     strictDi: true
   });
 });

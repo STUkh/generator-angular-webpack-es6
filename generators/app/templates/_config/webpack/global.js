@@ -83,12 +83,15 @@ module.exports = function(_path) {
         loaders: [
           "expose?angular"
         ]
-      }, {
+      },
+      <% if (props.jQuery.package) { %>
+      {
         test: require.resolve("jquery"),
         loaders: [
           "expose?$!expose?jQuery"
         ]
       }
+      <% } %>
       ]
     },
 

@@ -1,13 +1,11 @@
 {
-  "name": "<%= name %>",
+  "name": "<%- props.appName %>",
   "version": "0.1.0",
   "scripts": {
     "dev": "NODE_ENV=development webpack-dev-server --progress",
     "build": "rm -rf dist/* && NODE_ENV=production webpack -p --colors"
   },
   "dependencies": {
-    "angular": "~1.4.3",
-    "angular-ui-router": "~0.2.15",
     "assets-webpack-plugin": "^3.2.0",
     "autoprefixer-core": "^5.2.1",
     "babel-core": "~5.8.23",
