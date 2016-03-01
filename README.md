@@ -2,6 +2,7 @@
 
 > Yeoman generator for AngularJS + Webpack with ES6 and SASS.
 
+> * Perfectly compatible with angularOcLazyLoad plugin
 > * SASS as CSS preprocessor
 > * Angular UI router as default router already included
 > * Optional installation bootstrap-sass source
@@ -35,4 +36,8 @@ mkdir my-new-project && cd $_
 yo angular-webpack-es6
 ```
 
-## Inspired by [generator-gulp-angular](https://github.com/Swiip/generator-gulp-angular) project.
+#### TODO:
+> * Add better examples with lazy-loaded modules
+> * Rewrite generator files copy method
+
+#### Inspired by [generator-gulp-angular](https://github.com/Swiip/generator-gulp-angular) project.
