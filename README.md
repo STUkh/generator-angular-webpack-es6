@@ -36,6 +36,27 @@ mkdir my-new-project && cd $_
 yo angular-webpack-es6
 ```
 
+##### Run `npm run dev` to start development server on http://localhost:8080:
+```
+npm run dev
+```
+
+##### To make production-ready build run `npm run build` after few moments you will see build id `dist` folder:
+```
+npm run build
+```
+
+### Contribute
+
+##### If you want to contribute:
+> * Fork repository and clone project to your machine
+> * Install npm packages and create new feature/fix branch
+> * Link local project to be able install generator with `yo` from folder like from global installed package:
+> ``` npm link ```
+> * Make PR
+> * ...
+> * PROFIT
+
 #### TODO:
 > * ~~Add better examples with lazy-loaded modules~~ Added in 0.1.2
 > * Rewrite generator files copy method
