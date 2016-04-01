@@ -5,7 +5,7 @@
   "homepage": "",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --progress",
-    "build": "rm -rf dist/* && cross-env NODE_ENV=production webpack -p --colors"
+    "build": "cross-env NODE_ENV=production webpack -p --colors"
   },
   "dependencies": {
     "assets-webpack-plugin": "^3.2.0",
@@ -13,6 +13,7 @@
     "babel-core": "~5.8.23",
     "babel-loader": "^5.3.3",
     "baggage-loader": "^0.2.4",
+    "clean-webpack-plugin": "^0.1.8",
     "cross-env": "^1.0.7",
     "css-loader": "^0.23.0",
     "es6-promise": "^3.0.2",
