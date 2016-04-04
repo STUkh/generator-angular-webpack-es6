@@ -1,4 +1,5 @@
 'use strict';
+var webpack = require('webpack');
 
 module.exports = function(_path) {
   return {
@@ -8,8 +9,11 @@ module.exports = function(_path) {
     devServer: {
       contentBase: './dist',
       info: true,
-      hot: false,
+      hot: true,
       inline: true
-    }
-  }
+    },
+    plugins: [
+      new webpack.HotModuleReplacementPlugin()
+    ]
+  };
 };
