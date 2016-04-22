@@ -1,6 +1,6 @@
 'use strict';
 
-function routeConfig($urlRouterProvider, <% if (props.ocLazyLoad) { %>$stateProvider, resolverProvider<% } %>) {
+function routeConfig($urlRouterProvider<% if (props.ocLazyLoad) { %>, $stateProvider, resolverProvider<% } %>) {
   'ngInject';
 
 <% if (props.ocLazyLoad) { %>

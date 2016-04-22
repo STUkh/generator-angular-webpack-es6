@@ -20,7 +20,8 @@ module.exports = function(_path) {
     // entry points
     entry: {
       vendor: _path + '/src/app/index.vendor.js',
-      app: _path + '/src/app/index.bootstrap.js'
+      app: _path + '/src/app/index.bootstrap.js',
+      polyfill: 'babel-polyfill'
     },
 
     // output system
@@ -54,10 +55,27 @@ module.exports = function(_path) {
       }, {
         test: /\.js$/,
         loaders: [
-          'baggage-loader?[file].html&[file].css',
-          'ng-annotate-loader',
-          'babel-loader'
+          'baggage-loader?[file].html&[file].css'
         ]
+      }, {
+        test: /\.js$/,
+        exclude: [
+          path.resolve(_path, "node_modules")
+        ],
+        loaders: [
+          'ng-annotate-loader'
+        ]
+      }, {
+        test: /\.js$/,
+        exclude: [
+          path.resolve(_path, "node_modules")
+        ],
+        loader: 'babel-loader',
+        query: {
+          cacheDirectory: true,
+          plugins: ['transform-runtime', 'add-module-exports'],
+          presets: ['angular', 'es2017']
+        }
       }, {
         test: /\.css$/,
         loaders: [

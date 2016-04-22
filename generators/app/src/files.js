@@ -24,6 +24,10 @@ module.exports = function (AngularWebpackES6Generator) {
             this.templatePath('_.gitignore'),
             this.destinationPath('.gitignore')
         );
+        this.fs.copy(
+            this.templatePath('_.babelrc'),
+            this.destinationPath('.babelrc')
+        );
 
         this.fs.copyTpl(
             this.templatePath('_config/**/*'),
