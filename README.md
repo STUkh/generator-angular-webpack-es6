@@ -59,6 +59,6 @@ npm run build
 
 #### TODO:
 > * ~~Add better examples with lazy-loaded modules~~ Added in 0.1.2
-> * Rewrite generator files copy method
+> * ~~Update to Babel6~~ Added in 0.2.0
 
 #### Inspired by [generator-gulp-angular](https://github.com/Swiip/generator-gulp-angular) project.
