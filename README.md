@@ -4,7 +4,7 @@
 [![Download Month](http://img.shields.io/npm/dm/generator-angular-webpack-es6.svg?style=flat-square)](https://www.npmjs.com/package/generator-angular-webpack-es6)
 
 <div style="text-align:center" align="center">
-	<img src="generators/app/angular.png" alt="generator-angular-webpack-es6">
+    <img src="generators/app/angular.png" alt="generator-angular-webpack-es6">
 </div>
 
 > Yeoman generator for AngularJS + Webpack with ES6 and SASS.
@@ -37,38 +37,38 @@ npm install -g generator-angular-webpack-es6
 
 ├── /config/                              # Build config
 │   └── /webpack/                         # Webpack config files
-│   	├── /environments/                # Webpack env dependent configs
-│   	└── global.js                     # Global webpack settings for all envs
+│       ├── /environments/                # Webpack env dependent configs
+│       └── global.js                     # Global webpack settings for all envs
 ├── /dist/                                # The folder for compiled output
 ├── /node_modules/                        # 3rd-party libraries and utilities
 ├── /src/                                 # Source folder
 │   ├── /app/                             # Application code
-│   │	├── /components/                  # Shared UI components
-│   │	│	└── /footer/                  # Footer shared component. Place footer's styles, directives, templates here
-│   │	├── /core/                        # Shared angular services/directives
-│   │	│	├── /directives/              # Shared directives
-│   │	│	├── /services/                # Shared services
-│   │	│	└── /core.module.js           # Import of all core components should be here
-│   │	├── /pages/                       # All pages-dependent content should place here
-│   │	│	├── /main/                    # Main page
-│   │	│	│	├── /main.controller.js   # Main page Controller
-│   │	│	│	├── /main.html            # Main page template
-│   │	│	│	├── /main.module.js       # Main page module
-│   │	│	│	├── /main.route.js        # Main page routes
+│   │   ├── /components/                  # Shared UI components
+│   │   │   └── /footer/                  # Footer shared component. Place footer's styles, directives, templates here
+│   │   ├── /core/                        # Shared angular services/directives
+│   │   │   ├── /directives/              # Shared directives
+│   │   │   ├── /services/                # Shared services
+│   │   │   └── /core.module.js           # Import of all core components should be here
+│   │   ├── /pages/                       # All pages-dependent content should place here
+│   │   │   ├── /main/                    # Main page
+│   │   │   │   ├── /main.controller.js   # Main page Controller
+│   │   │   │   ├── /main.html            # Main page template
+│   │   │   │   ├── /main.module.js       # Main page module
+│   │   │   │   ├── /main.route.js        # Main page routes
 │   │   │   └── /.../                     # Other pages...
-│   │	├── /index.bootstrap.js           # Entry point. Import internal and external modules and bootstrap (RUN) angular application
-│   │	├── /index.components.js          # Define all your custom components here
-│   │	├── /index.config.js              # Function that will be triggered in Angular's "config" phase
-│   │	├── /index.module.js              # Main application's module
-│   │	├── /index.routes.js              # Describe only "otherwise" and async routes here
-│   │	├── /index.run.js                 # Function that will be triggered in Angular's "run" phase
-│   │	├── /index.vendor.js              # Import all vendors and 3rd party plugins here
+│   │   ├── /index.bootstrap.js           # Entry point. Import internal and external modules and bootstrap (RUN) angular application
+│   │   ├── /index.components.js          # Define all your custom components here
+│   │   ├── /index.config.js              # Function that will be triggered in Angular's "config" phase
+│   │   ├── /index.module.js              # Main application's module
+│   │   ├── /index.routes.js              # Describe only "otherwise" and async routes here
+│   │   ├── /index.run.js                 # Function that will be triggered in Angular's "run" phase
+│   │   ├── /index.vendor.js              # Import all vendors and 3rd party plugins here
 │   ├── /assets/                          # Static content
-│   │	├── /images/                      # Images
-│   │	├── /js/                          # Extra libs folder
-│   │	└── /styles/                      # Styles folder
-│   │		├── /css/                     # CSS
-│   │		└── /sass/  		          # SASS
+│   │   ├── /images/                      # Images
+│   │   ├── /js/                          # Extra libs folder
+│   │   └── /styles/                      # Styles folder
+│   │       ├── /css/                     # CSS
+│   │       └── /sass/                    # SASS
 │   ├── favicon.ico                       # Application icon to be displayed in bookmarks
 │   └── tpl-index.html                    # Template for html-webpack-plugin that will be transpiled into index.html in /dist
 │── .babelrc                              # Babel config with presets and plugins
