@@ -54,7 +54,7 @@ npm install -g generator-angular-webpack-es6
 │   │   │   │   ├── /main.controller.js   # Main page Controller
 │   │   │   │   ├── /main.html            # Main page template
 │   │   │   │   ├── /main.module.js       # Main page module
-│   │   │   │   ├── /main.route.js        # Main page routes
+│   │   │   │   └── /main.route.js        # Main page routes
 │   │   │   └── /.../                     # Other pages...
 │   │   ├── /index.bootstrap.js           # Entry point. Import internal and external modules and bootstrap (RUN) angular application
 │   │   ├── /index.components.js          # Define all your custom components here
