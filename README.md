@@ -3,7 +3,9 @@
 [![NPM Version](http://img.shields.io/npm/v/generator-angular-webpack-es6.svg?style=flat-square)](https://www.npmjs.com/package/generator-angular-webpack-es6)
 [![Download Month](http://img.shields.io/npm/dm/generator-angular-webpack-es6.svg?style=flat-square)](https://www.npmjs.com/package/generator-angular-webpack-es6)
 
--> ![generator-angular-webpack-es6](generators/app/angular.png) <-
+<div style="text-align:center" align="center">
+	<img src="generators/app/angular.png" alt="generator-angular-webpack-es6">
+</div>
 
 > Yeoman generator for AngularJS + Webpack with ES6 and SASS.
 
