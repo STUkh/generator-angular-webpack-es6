@@ -1,5 +1,12 @@
 # generator-angular-webpack-es6
 
+[![NPM Version](http://img.shields.io/npm/v/generator-angular-webpack-es6.svg?style=flat-square)](https://www.npmjs.com/package/generator-angular-webpack-es6)
+[![Download Month](http://img.shields.io/npm/dm/generator-angular-webpack-es6.svg?style=flat-square)](https://www.npmjs.com/package/generator-angular-webpack-es6)
+
+<div style="text-align:center" align="center">
+    <img src="generators/app/angular.png" alt="generator-angular-webpack-es6">
+</div>
+
 > Yeoman generator for AngularJS + Webpack with ES6 and SASS.
 
 > * Perfectly compatible with angularOcLazyLoad plugin
@@ -22,6 +29,52 @@ npm install -g yo webpack
 ##### Install `generator-angular-webpack-es6`:
 ```
 npm install -g generator-angular-webpack-es6
+```
+
+### Directory Layout
+
+```shell
+
+├── /config/                              # Build config
+│   └── /webpack/                         # Webpack config files
+│       ├── /environments/                # Webpack env dependent configs
+│       └── global.js                     # Global webpack settings for all envs
+├── /dist/                                # The folder for compiled output
+├── /node_modules/                        # 3rd-party libraries and utilities
+├── /src/                                 # Source folder
+│   ├── /app/                             # Application code
+│   │   ├── /components/                  # Shared UI components
+│   │   │   └── /footer/                  # Footer shared component. Place footer's styles, directives, templates here
+│   │   ├── /core/                        # Shared angular services/directives
+│   │   │   ├── /directives/              # Shared directives
+│   │   │   ├── /services/                # Shared services
+│   │   │   └── /core.module.js           # Import of all core components should be here
+│   │   ├── /pages/                       # All pages-dependent content should place here
+│   │   │   ├── /main/                    # Main page
+│   │   │   │   ├── /main.controller.js   # Main page Controller
+│   │   │   │   ├── /main.html            # Main page template
+│   │   │   │   ├── /main.module.js       # Main page module
+│   │   │   │   └── /main.route.js        # Main page routes
+│   │   │   └── /.../                     # Other pages...
+│   │   ├── /index.bootstrap.js           # Entry point. Import internal and external modules and bootstrap (RUN) angular application
+│   │   ├── /index.components.js          # Define all your custom components here
+│   │   ├── /index.config.js              # Function that will be triggered in Angular's "config" phase
+│   │   ├── /index.module.js              # Main application's module
+│   │   ├── /index.routes.js              # Describe only "otherwise" and async routes here
+│   │   ├── /index.run.js                 # Function that will be triggered in Angular's "run" phase
+│   │   ├── /index.vendor.js              # Import all vendors and 3rd party plugins here
+│   ├── /assets/                          # Static content
+│   │   ├── /images/                      # Images
+│   │   ├── /js/                          # Extra libs folder
+│   │   └── /styles/                      # Styles folder
+│   │       ├── /css/                     # CSS
+│   │       └── /sass/                    # SASS
+│   ├── favicon.ico                       # Application icon to be displayed in bookmarks
+│   └── tpl-index.html                    # Template for html-webpack-plugin that will be transpiled into index.html in /dist
+│── .babelrc                              # Babel config with presets and plugins
+│── .gitignore                            # List of files to ignore by git
+│── package.json                          # The list of project dependencies and NPM scripts
+└── webpack.config.js                     # Bundling and optimization settings for Webpack
 ```
 
 ### Run
