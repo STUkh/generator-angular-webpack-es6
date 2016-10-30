@@ -1,6 +1,6 @@
 'use strict';
 
-import route from './main.route';
+import * as route from './main.route';
 
 const mainPageModule = angular.module('main-module', [
   'ui.router'

@@ -40,8 +40,8 @@ module.exports = function (AngularWebpackES6Generator) {
             this.destinationPath('src/favicon.ico')
         );
         this.fs.copy(
-            this.templatePath('_src/_tpl-index.html'),
-            this.destinationPath('src/tpl-index.html')
+            this.templatePath('_src/_tpl-index.ejs'),
+            this.destinationPath('src/tpl-index.ejs')
         );
         this.fs.copyTpl(
             this.templatePath('_src/_assets/_styles/_sass/_index.scss'),

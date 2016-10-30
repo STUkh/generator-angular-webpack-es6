@@ -79,11 +79,17 @@
     "choices": [
       {
         "value": {
-          "key": "jquery2",
-          "package": "jquery@2",
-          "import": false
+          "key": "jquery3",
+          "package": "jquery@3"
         },
-        "name": "jQuery 2.x (new version, lighter, IE9+)"
+        "name": "jQuery 3.x (new version, lighter, modular, IE9+)"
+      },
+      {
+        "value": {
+          "key": "jquery2",
+          "package": "jquery@2"
+        },
+        "name": "jQuery 2.x (IE9+)"
       },
       {
         "value": {
@@ -129,6 +135,18 @@
         "name": "None, $http is enough!"
       }
     ]
+  },
+  {
+    "type": "confirm",
+    "name": "lodash",
+    "message": "Would you like to include Lodash - A modern JavaScript utility library delivering modularity, performance & extras.",
+    "default": true
+  },
+  {
+    "type": "confirm",
+    "name": "moment",
+    "message": "Would you like to include Moment.js - Library for parse, validate, manipulate, and display dates in JavaScript.",
+    "default": true
   },
   {
     "type": "confirm",

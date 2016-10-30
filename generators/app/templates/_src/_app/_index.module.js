@@ -1,8 +1,8 @@
 'use strict';
 
 import * as components from './index.components';
-import config from './index.config';
-import run from './index.run';
+import * as config from './index.config';
+import * as run from './index.run';
 
 
 const App = angular.module(

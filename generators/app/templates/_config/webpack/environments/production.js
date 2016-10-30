@@ -1,10 +1,10 @@
 'use strict';
 var CleanWebpackPlugin = require('clean-webpack-plugin');
+var webpack = require('webpack');
 
 module.exports = function(_path) {
   return {
     context: _path,
-    debug: false,
     devtool: 'cheap-source-map',
     output: {
       publicPath: '/',
@@ -15,6 +15,12 @@ module.exports = function(_path) {
         root: _path,
         verbose: true,
         dry: false
+      }),
+      new webpack.optimize.DedupePlugin(),
+      new webpack.optimize.UglifyJsPlugin({
+        minimize: true,
+        warnings: false,
+        sourceMap: true,
       })
     ]
   };

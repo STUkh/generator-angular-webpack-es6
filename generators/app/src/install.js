@@ -16,6 +16,14 @@ module.exports = function (AngularWebpackES6Generator) {
             deps.push("bootstrap-sass");
         }
 
+        if (this.props.lodash) {
+            deps.push("lodash");
+        }
+
+        if (this.props.moment) {
+            deps.push("moment");
+        }
+
         deps = _.concat(deps, this.importList);
 
         this.npmInstall(deps, { 'save': true });

@@ -16,6 +16,7 @@ module.exports = function (AngularWebpackES6Generator) {
         package: "oclazyload"
       });
     }
+    
   };
 
   /**
