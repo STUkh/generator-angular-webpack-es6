@@ -9,6 +9,8 @@
 
 > Yeoman generator for AngularJS + Webpack with ES6 and SASS.
 
+> * Latest Webpack with Tree Shaking feature enabled
+> * Babel 6 with ES2017 features included
 > * Perfectly compatible with angularOcLazyLoad plugin
 > * SASS as CSS preprocessor
 > * Angular UI router as default router already included
@@ -18,6 +20,8 @@
 > * Config has options for development and production mode
 
 > Use only webpack with npm. No external dependencies like bower, grunt, gulp...
+
+> Webpack@2 still in Beta and it may contain some bugs. Please, report them to Webpack developers directly.
 
 ### Install
 
@@ -84,20 +88,14 @@ npm install -g generator-angular-webpack-es6
 mkdir my-new-project && cd $_
 ```
 
-##### Run `yo angular-webpack-es6`, and select desired technologies:
-```
-yo angular-webpack-es6
-```
+##### Run `yo angular-webpack-es6`, and select desired technologies.
+##### `npm start` or `npm run dev` - to start development server on http://localhost:8080.
+##### `npm run build` - To make production-ready build run  after few moments you will see build id `dist` folder.
 
-##### Run `npm run dev` to start development server on http://localhost:8080:
-```
-npm run dev
-```
+### Known bugs:
+> * **Problem**: Webpack2 unable to import function with only export default value.
 
-##### To make production-ready build run `npm run build` after few moments you will see build id `dist` folder:
-```
-npm run build
-```
+>   **Workaround**: Use ```import * as variable from "package" ``` instead of ```import variable from "package" ```
 
 ### Contribute
 
