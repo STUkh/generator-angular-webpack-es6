@@ -74,7 +74,7 @@ module.exports = function (AngularWebpackES6Generator) {
           }
         }, this);
       } else if (utils.isHasPackage(section)) {
-        this.importList.push(utils.stripPackageName(section.package));
+        this.importList.push(section.package);
       }
 
     }.bind(this));
