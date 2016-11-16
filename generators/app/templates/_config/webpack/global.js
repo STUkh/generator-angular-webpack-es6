@@ -10,7 +10,7 @@ var HtmlWebpackPlugin = require("html-webpack-plugin");
 var rootPublic = path.resolve('./src');
 var NODE_ENV = process.env.NODE_ENV || "production";
 var DEVELOPMENT = NODE_ENV === "production" ? false : true;
-var stylesLoader = 'css?root=' + rootPublic + '&sourceMap!postcss!sass?outputStyle=expanded&sourceMap=true&sourceMapContents=true';
+var stylesLoader = 'css-loader?root=' + rootPublic + '&sourceMap!postcss-loader!sass-loader?outputStyle=expanded&sourceMap=true&sourceMapContents=true';
 
 module.exports = function (_path) {
   var rootAssetPath = _path + 'src';
@@ -41,17 +41,16 @@ module.exports = function (_path) {
 
     // modules resolvers
     module: {
-      noParse: [],
       loaders: [{
         test: /\.html$/,
         loaders: [
           {
-            loader: 'ngtemplate',
+            loader: 'ngtemplate-loader',
             query: {
               relativeTo: path.join(_path, '/src')
             }
           }, {
-            loader: 'html',
+            loader: 'html-loader',
             query: {
               attrs: ['img:src', 'img:data-src']
             }
@@ -64,31 +63,31 @@ module.exports = function (_path) {
         ],
         loaders: [
           {
-            loader: 'babel',
+            loader: 'babel-loader',
             query: {
               cacheDirectory: false
             }
           },
-          'baggage?[file].html&[file].css'
+          'baggage-loader?[file].html&[file].css'
         ]
       }, {
         test: /\.css$/,
         loaders: [
-          'style',
-          'css?sourceMap',
-          'postcss'
+          'style-loader',
+          'css-loader?sourceMap',
+          'postcss-loader'
         ]
       }, {
         test: /\.(scss|sass)$/,
-        loader: DEVELOPMENT ? ('style!' + stylesLoader) : ExtractTextPlugin.extract({
-          fallbackLoader: "style",
+        loader: DEVELOPMENT ? ('style-loader!' + stylesLoader) : ExtractTextPlugin.extract({
+          fallbackLoader: "style-loader",
           loader: stylesLoader
         })
       }, {
         test: /\.(woff2|woff|ttf|eot|svg)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
         loaders: [
           {
-            loader: 'url',
+            loader: 'url-loader',
             query: {
               name: 'assets/fonts/[name]_[hash].[ext]'
             }
@@ -98,7 +97,7 @@ module.exports = function (_path) {
         test: /\.(jpe?g|png|gif)$/i,
         loaders: [
           {
-            loader: 'url',
+            loader: 'url-loader',
             query: {
               name: '/assets/images/[name]_[hash].[ext]',
               limit: 10000
@@ -117,21 +116,22 @@ module.exports = function (_path) {
           postcss: [autoprefixer({browsers: ['last 5 versions']})],
         }
       }),
-      // new webpack.ProvidePlugin({
-      //     <% if (props.jQuery) { %>
-      //     $: 'jquery',
-      //     jQuery: 'jquery',
-      //     'window.jQuery': 'jquery',
-      //     <% } %>
-      //     <% if (props.moment) { %>
-      //     moment: 'moment',
-      //     'window.moment': 'moment',
-      //     <% } %>
-      //     <% if (props.lodash) { %>
-      //     _: 'lodash',
-      //     'window._': 'lodash'
-      //     <% } %>
-      // }),
+       new webpack.ProvidePlugin({
+           <% if (props.jQuery) { %>
+           $: 'jquery',
+           jQuery: 'jquery',
+           'window.jQuery': 'jquery',
+           'window.jquery': 'jquery',
+           <% } %>
+           <% if (props.moment) { %>
+           moment: 'moment',
+           'window.moment': 'moment',
+           <% } %>
+           <% if (props.lodash) { %>
+           _: 'lodash',
+           'window._': 'lodash',
+           <% } %>
+       }),
       new webpack.DefinePlugin({
         'NODE_ENV': JSON.stringify(NODE_ENV)
       }),

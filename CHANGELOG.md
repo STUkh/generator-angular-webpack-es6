@@ -1,3 +1,14 @@
+## v0.4.0 (2016-11-16)
+
+Features:
+
+  - Updated Webpack config to 2.1.0@beta27 version
+  - Add small roadmap to README.md
+
+Bugfixes:
+
+  - Fixed npm run scripts for all platforms
+
 ## v0.3.2 (2016-10-30)
 
 Features:

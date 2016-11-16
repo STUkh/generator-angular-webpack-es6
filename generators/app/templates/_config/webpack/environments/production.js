@@ -5,7 +5,7 @@ var webpack = require('webpack');
 module.exports = function(_path) {
   return {
     context: _path,
-    devtool: 'cheap-source-map',
+    devtool: 'source-map',
     output: {
       publicPath: '/',
       filename: '[name].[chunkhash].js'
@@ -16,7 +16,6 @@ module.exports = function(_path) {
         verbose: true,
         dry: false
       }),
-      new webpack.optimize.DedupePlugin(),
       new webpack.optimize.UglifyJsPlugin({
         minimize: true,
         warnings: false,

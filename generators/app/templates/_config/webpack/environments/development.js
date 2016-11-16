@@ -4,7 +4,7 @@ var webpack = require('webpack');
 module.exports = function(_path) {
   return {
     context: _path,
-    devtool: 'cheap-source-map',
+    devtool: 'source-map',
     devServer: {
       contentBase: './dist',
       info: true,

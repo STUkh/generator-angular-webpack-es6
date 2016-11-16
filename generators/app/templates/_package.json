@@ -5,8 +5,8 @@
   "homepage": "",
   "scripts": {
     "start": "npm run dev",
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --progress",
-    "build": "cross-env NODE_ENV=production webpack -p --colors"
+    "dev": "node ./node_modules/cross-env/bin/cross-env.js NODE_ENV=development&&./node_modules/webpack-dev-server/bin/webpack-dev-server.js --progress --bail --open",
+    "build": "node ./node_modules/cross-env/bin/cross-env.js NODE_ENV=productio&&./node_modules/webpack/bin/webpack.js -p --colors"
   },
   "dependencies": {
     "assets-webpack-plugin": "^3.4.0",
@@ -42,7 +42,7 @@
     "style-loader": "^0.13.1",
     "url": "^0.11.0",
     "url-loader": "^0.5.7",
-    "webpack": "^2.1.0-beta.25",
+    "webpack": "^2.1.0-beta.27",
     "webpack-dev-server": "^2.1.0-beta.7"
   },
   "engines": {

@@ -109,6 +109,9 @@ mkdir my-new-project && cd $_
 > * PROFIT
 
 #### TODO:
+> * Add .dockerfile
+> * Add example testing environment with karma and protractor
+> * Add more dotfiles
 > * ~~Add better examples with lazy-loaded modules~~ Added in 0.1.2
 > * ~~Update to Babel6~~ Added in 0.2.0
 
