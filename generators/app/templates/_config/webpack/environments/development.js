@@ -7,7 +7,6 @@ module.exports = function(_path) {
     devtool: 'source-map',
     devServer: {
       contentBase: './dist',
-      info: true,
       hot: true,
       inline: true
     },
