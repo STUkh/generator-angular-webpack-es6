@@ -24,7 +24,7 @@ module.exports = function (AngularWebpackES6Generator) {
             deps.push("moment");
         }
 
-        deps = _.concat(deps, this.importList);
+        deps = _.concat(deps, this.installList);
 
         this.npmInstall(deps, { 'save': true });
     };

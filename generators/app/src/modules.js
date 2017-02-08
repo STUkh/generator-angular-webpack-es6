@@ -57,11 +57,11 @@ module.exports = function (AngularWebpackES6Generator) {
    */
   AngularWebpackES6Generator.prototype.prepareImportsList = function prepareImportsList() {
 
-    this.importList = [];
+    this.installList = [];
 
     imports.forEach(function (mod) {
       if (mod.module && mod.package) {
-        this.importList.push(mod.package);
+        this.installList.push(mod.package);
       }
     }, this);
 
@@ -70,14 +70,18 @@ module.exports = function (AngularWebpackES6Generator) {
       if (_.isArray(section)) {
         section.forEach(function(prop) {
           if (utils.isHasPackage(prop)) {
-            this.importList.push(utils.stripPackageName(prop.package));
+            this.installList.push(utils.stripPackageName(prop.package));
           }
         }, this);
       } else if (utils.isHasPackage(section)) {
-        this.importList.push(section.package);
+        this.installList.push(section.package);
       }
 
     }.bind(this));
+
+    this.importList = this.installList.map(function (pkg) {
+      return utils.stripPackageName(pkg);
+    });
 
   };
 

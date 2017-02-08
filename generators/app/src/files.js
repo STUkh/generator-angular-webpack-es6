@@ -20,6 +20,11 @@ module.exports = function (AngularWebpackES6Generator) {
             this.destinationPath('webpack.config.js'),
             this
         );
+        this.fs.copyTpl(
+            this.templatePath('_postcss.config.js'),
+            this.destinationPath('postcss.config.js'),
+            this
+        );
         this.fs.copy(
             this.templatePath('_.gitignore'),
             this.destinationPath('.gitignore')
