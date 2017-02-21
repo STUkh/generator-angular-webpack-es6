@@ -53,7 +53,10 @@ module.exports = function (AngularWebpackES6Generator) {
             this.destinationPath('src/assets/styles/sass/index.scss'),
             this
         );
-
+        this.fs.copy(
+            this.templatePath('_src/_assets/_images/**/*'),
+            this.destinationPath('src/assets/images')
+        );
         this.fs.copyTpl(
             this.templatePath('_src/_app/_index.bootstrap.js'),
             this.destinationPath('src/app/index.bootstrap.js'),

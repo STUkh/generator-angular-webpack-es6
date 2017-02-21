@@ -1,3 +1,25 @@
+## v1.0.0 (2017-02-21)
+
+Features:
+
+  - Updated Webpack core to latest
+  - Removed all require statements and replaced with imports
+  - Add PostCSS config file in application root folder
+  - Small changes in async page load path
+
+Bugfixes:
+
+  - Fix alias paths
+  - Fix images url-loader path
+  - Fix webpack config to support latest version
+
+
+## v0.5.0 (2017-02-5)
+
+Bugfixes:
+
+  - Freeze webpack version 2.2.0-rc3 to solve "exports is not defined" error
+
 ## v0.4.1 (2016-11-16)
 
 Features:

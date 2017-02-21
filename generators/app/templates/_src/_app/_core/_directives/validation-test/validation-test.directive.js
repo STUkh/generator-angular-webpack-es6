@@ -14,7 +14,7 @@ export default function (app) {
         };
 
         function linkFn (scope, elem, attrs, ngModelCtrl) {
-            scope.$watch(attrs.ngModel, function (newVal) {
+            scope.$watch(attrs.ngModel, (newVal) => {
                 if (newVal === 'test') {
                     ngModelCtrl.$setValidity('test', true);
                 } else {

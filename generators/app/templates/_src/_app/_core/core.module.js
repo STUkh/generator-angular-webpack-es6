@@ -2,10 +2,16 @@
 
 const shared = angular.module('core.shared', []);
 
-require('./directives/validation-test/validation-test.directive')(shared);
+import validationTestDirective from './directives/validation-test/validation-test.directive';
 
-require('./services/constants')(shared);
-require('./services/store.factory')(shared);
-require('./services/resolver.provider')(shared);
+import constants from './services/constants';
+import storeFactory from './services/store.factory';
+import resolverProvider from './services/resolver.provider';
+
+validationTestDirective(shared);
+
+constants(shared);
+storeFactory(shared);
+resolverProvider(shared);
 
 export default shared;

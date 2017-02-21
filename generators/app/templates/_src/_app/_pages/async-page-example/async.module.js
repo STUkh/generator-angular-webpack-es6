@@ -2,7 +2,7 @@
 
 import './async.scss';
 
-import * as asyncController from './async.controller.js';
+import asyncController from './async.controller.js';
 
 const asyncModule = angular.module('async-module', []);
 

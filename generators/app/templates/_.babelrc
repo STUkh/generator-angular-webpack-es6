@@ -1,8 +1,5 @@
 {
 	"plugins": [
-		"transform-runtime", 
-		"add-module-exports", 
-		"syntax-flow",
 		"angularjs-annotate"
 	],
     "presets": [

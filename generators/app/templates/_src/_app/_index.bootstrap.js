@@ -11,7 +11,7 @@ import "./index.module";
 
 import "../assets/styles/sass/index.scss";
 
-angular.element(document).ready(function () {
+angular.element(document).ready(() => {
   angular.bootstrap(document, ['<%= props.appName %>'], {
     strictDi: true
   });

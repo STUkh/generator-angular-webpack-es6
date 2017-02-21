@@ -33,9 +33,9 @@ module.exports = function (_path) {
       extensions: ['.js', '.es6', '.jsx', '.scss', '.css'],
       alias: {
         _appRoot: path.join(_path, 'src', 'app'),
-        _images: path.join(_path, 'src', 'app', 'assets', 'images'),
-        _stylesheets: path.join(_path, 'src', 'app', 'assets', 'styles'),
-        _scripts: path.join(_path, 'src', 'app', 'assets', 'js')
+        _images: path.join(_path, 'src', 'assets', 'images'),
+        _stylesheets: path.join(_path, 'src', 'assets', 'styles'),
+        _scripts: path.join(_path, 'src', 'assets', 'js')
       }
     },
 
@@ -99,7 +99,7 @@ module.exports = function (_path) {
           {
             loader: 'url-loader',
             query: {
-              name: '/assets/images/[name]_[hash].[ext]',
+              name: 'assets/images/[name]_[hash].[ext]',
               limit: 10000
             }
           }
@@ -135,7 +135,7 @@ module.exports = function (_path) {
       new webpack.DefinePlugin({
         'NODE_ENV': JSON.stringify(NODE_ENV)
       }),
-      new webpack.NoErrorsPlugin(),
+      new webpack.NoEmitOnErrorsPlugin(),
       new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
       new webpack.optimize.AggressiveMergingPlugin({
         moveToParents: true

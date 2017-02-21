@@ -8,8 +8,18 @@
 	<% if (props.moment) { %>
 		<p>Moment version: {{main.moment_version}}</p>
 	<% } %>
-        <% if (props.ocLazyLoad) { %>
+    <% if (props.ocLazyLoad) { %>
         <p><button class="btn btn-primary btn-lg" role="button" ui-sref="async">Go to the Dark Side! »</button></p>
-        <% } %>
+    <% } %>
+        <div class="row">
+            <div class="col-md-4">
+                <div>Image source: <b>Model</b></div>
+                <img ng-src="{{main.angularLogo}}" alt="Angular logo">
+            </div>
+            <div class="col-md-4">
+                <div>Image source: <b>URL</b></div>
+                <img src="../../../assets/images/yeoman.png" alt="Yeoman logo">
+            </div>
+        </div>
     </div>
 </div>

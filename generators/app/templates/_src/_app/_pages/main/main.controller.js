@@ -1,12 +1,14 @@
 'use strict';
 
 <% if (props.lodash) { %>
-import * as _ from 'lodash/core';
+import  _ from 'lodash/core';
 <% } %>
 
 <% if (props.moment) { %>
-import * as moment from 'moment';
+import moment from 'moment';
 <% } %>
+
+import angularLogo from '_images/angular.png';
 
 function MainController($log) {
   'ngInject';
@@ -20,6 +22,8 @@ function MainController($log) {
 <% if (props.moment) { %>
 	this.moment_version = moment.version;
 <% } %>
+
+    this.angularLogo = angularLogo;
 
 }
 

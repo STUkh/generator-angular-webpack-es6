@@ -1,5 +1,9 @@
 'use strict';
 
+<% if (props.ocLazyLoad) { %>
+import asyncTemplate from '!!file-loader?name=templates/[name].[ext]!./pages/async-page-example/async.html';
+<% } %>
+
 function routeConfig($urlRouterProvider<% if (props.ocLazyLoad) { %>, $stateProvider, resolverProvider<% } %>) {
   'ngInject';
 
@@ -7,7 +11,7 @@ function routeConfig($urlRouterProvider<% if (props.ocLazyLoad) { %>, $stateProv
     $stateProvider
         .state('async', {
           url: '/async',
-          templateUrl: require('!!file-loader?name=templates/[name].[ext]!./pages/async-page-example/async.html'),
+          templateUrl: asyncTemplate,
           controller: 'asyncController',
           resolve: {
             asyncPreloading: resolverProvider.asyncPagePrealoading

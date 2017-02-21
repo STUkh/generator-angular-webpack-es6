@@ -15,10 +15,10 @@
             require.ensure([], function (require) {
               var asyncModule = require('./async.module');
               $ocLazyLoad.load({
-                name: asyncModule.name,
+                name: asyncModule.default.name,
               });
 
-              deferred.resolve(asyncModule.controller);
+              deferred.resolve(asyncModule.default.controller);
             });
 
             return deferred.promise;
