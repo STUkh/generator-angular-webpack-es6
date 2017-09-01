@@ -97,6 +97,8 @@ mkdir my-new-project && cd $_
 
 >   **Workaround**: Use ```import * as variable from "package" ``` instead of ```import variable from "package" ```
 
+> * **Problem**: Webpack3: ExtractTextPlugin and file-loader do not work with the use syntax. [Link to the issue](https://github.com/webpack/extract-text-webpack-plugin/issues/275).
+
 ### Contribute
 
 ##### If you want to contribute:

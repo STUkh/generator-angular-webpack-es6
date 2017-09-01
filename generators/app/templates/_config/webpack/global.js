@@ -41,41 +41,50 @@ module.exports = function (_path) {
 
     // modules resolvers
     module: {
-      loaders: [{
+      rules: [{
         test: /\.html$/,
-        loaders: [
-          {
-            loader: 'ngtemplate-loader',
-            query: {
-              relativeTo: path.join(_path, '/src')
+        use: [
+            {
+              loader: 'ngtemplate-loader',
+              options: {
+                relativeTo: path.join(_path, '/src')
+              }
+            },
+            {
+              loader: 'html-loader',
+              options: {
+                attrs: ['img:src', 'img:data-src']
+              }
             }
-          }, {
-            loader: 'html-loader',
-            query: {
-              attrs: ['img:src', 'img:data-src']
-            }
-          }
         ]
       }, {
         test: /\.js$/,
         exclude: [
           path.resolve(_path, "node_modules")
         ],
-        loaders: [
+        use: [
           {
             loader: 'babel-loader',
-            query: {
+            options: {
               cacheDirectory: false
             }
           },
-          'baggage-loader?[file].html&[file].css'
+          {
+            loader: 'baggage-loader?[file].html&[file].css'
+          }
         ]
       }, {
         test: /\.css$/,
-        loaders: [
-          'style-loader',
-          'css-loader?sourceMap',
-          'postcss-loader'
+        use: [
+          {
+            loader: 'style-loader'
+          },
+          {
+            loader: 'css-loader?sourceMap'
+          },
+          {
+            loader: 'postcss-loader'
+          }
         ]
       }, {
         test: /\.(scss|sass)$/,
@@ -85,20 +94,20 @@ module.exports = function (_path) {
         })
       }, {
         test: /\.(woff2|woff|ttf|eot|svg)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loaders: [
+        use: [
           {
             loader: 'url-loader',
-            query: {
+            options: {
               name: 'assets/fonts/[name]_[hash].[ext]'
             }
           }
         ]
       }, {
         test: /\.(jpe?g|png|gif)$/i,
-        loaders: [
+        use: [
           {
             loader: 'url-loader',
-            query: {
+            options: {
               name: 'assets/images/[name]_[hash].[ext]',
               limit: 10000
             }
