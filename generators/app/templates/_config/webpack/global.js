@@ -57,7 +57,18 @@ module.exports = function (_path) {
               }
             }
         ]
-      }, {
+      },<% if (props.eslint) { %> {
+        test: /\.js$/,
+        exclude: [
+          path.resolve(_path, "node_modules")
+        ],
+        enforce: 'pre',
+        use: [
+          {
+            loader: 'eslint-loader'
+          }
+        ]
+      },<% } %> {
         test: /\.js$/,
         exclude: [
           path.resolve(_path, "node_modules")
