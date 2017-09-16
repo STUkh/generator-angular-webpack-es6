@@ -3,7 +3,7 @@
 import config from './index.config';
 import run from './index.run';
 
-import uiRouter from 'angular-ui-router';
+import uiRouter from '@uirouter/angularjs';
 
 import coreModule from './core/core.module';
 import indexComponents from './index.components';
