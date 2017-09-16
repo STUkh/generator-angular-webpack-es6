@@ -1,6 +1,6 @@
 {
   "name": "generator-angular-webpack-es6",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Angular Webpack ES6 generator. Uses SASS as CSS preprocessor, UI router as default angular router, LazyLoading example included. Inspired by generator-gulp-angular.",
   "homepage": "",
   "author": {
