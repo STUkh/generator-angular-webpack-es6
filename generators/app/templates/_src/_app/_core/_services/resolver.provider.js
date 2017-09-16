@@ -26,7 +26,7 @@ export default function (app) {
         function asyncPagePrealoading ($q) {
             "ngInject";
 
-            var defer = $q.defer();
+            const defer = $q.defer();
             // Some async stuff (request, calculations, etc.)
             return defer.promise;
         }

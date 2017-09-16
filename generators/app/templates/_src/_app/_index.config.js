@@ -1,3 +1,4 @@
+/*global NODE_ENV*/
 'use strict';
 
 function config($logProvider, $compileProvider) {

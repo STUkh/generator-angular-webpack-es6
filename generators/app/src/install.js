@@ -24,6 +24,10 @@ module.exports = function (AngularWebpackES6Generator) {
             deps.push("moment");
         }
 
+        if (this.props.eslint) {
+            deps.push('eslint', 'eslint-loader');
+        }
+
         deps = _.concat(deps, this.installList);
 
         this.npmInstall(deps, { 'save': true });

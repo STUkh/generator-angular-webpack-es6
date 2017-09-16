@@ -33,6 +33,10 @@ module.exports = function (AngularWebpackES6Generator) {
             this.templatePath('_.babelrc'),
             this.destinationPath('.babelrc')
         );
+        this.fs.copy(
+            this.templatePath('_.eslintrc.json'),
+            this.destinationPath('.eslintrc.json')
+        );
 
         this.fs.copyTpl(
             this.templatePath('_config/**/*'),

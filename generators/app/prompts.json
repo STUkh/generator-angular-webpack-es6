@@ -150,6 +150,12 @@
   },
   {
     "type": "confirm",
+    "name": "eslint",
+    "message": "Would you like to include ESLint - A configurable linter tool for identifying and reporting on patterns in your JavaScript code.",
+    "default": true
+  },
+  {
+    "type": "confirm",
     "name": "ocLazyLoad",
     "message": "Would you like to include angularOclazyLoad plugin to load angular modules asynchronously.",
     "default": true
