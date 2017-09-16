@@ -9,7 +9,7 @@ module.exports = function (AngularWebpackES6Generator) {
 
         var deps = [
             "angular",
-            "angular-ui-router"
+            "@uirouter/angularjs"
         ];
 
         if (this.props.bootstrapSass) {
