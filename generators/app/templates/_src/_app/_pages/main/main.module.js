@@ -1,12 +1,21 @@
 'use strict';
 
-import route from './main.route';
+import MainComponent from './main.component';
 
 const mainPageModule = angular.module('main-module', [
-  'ui.router'
-]);
+    'ui.router'
+])
+    .config(($stateProvider, $urlRouterProvider) => {
+        'ngInject';
 
-mainPageModule
-    .config(route);
+        $urlRouterProvider.otherwise('/');
+
+        $stateProvider
+            .state('main', {
+                url: '/',
+                component: 'main'
+            });
+    })
+    .component('main', new MainComponent());
 
 export default mainPageModule;
