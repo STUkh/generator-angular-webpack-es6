@@ -9,7 +9,7 @@ module.exports = function (AngularWebpackES6Generator) {
 
         var deps = [
             "angular",
-            "angular-ui-router"
+            "@uirouter/angularjs"
         ];
 
         if (this.props.bootstrapSass) {
@@ -22,6 +22,10 @@ module.exports = function (AngularWebpackES6Generator) {
 
         if (this.props.moment) {
             deps.push("moment");
+        }
+
+        if (this.props.eslint) {
+            deps.push('eslint', 'eslint-loader');
         }
 
         deps = _.concat(deps, this.installList);

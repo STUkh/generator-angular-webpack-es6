@@ -1,3 +1,10 @@
+## v1.0.4 (2017-09-17)
+
+Features:
+
+  - Updated Webpack to v.3 (PR #25, thanks @dannymy)
+  - Updated UI-router package repo paths (PR #22, thanks @lenin-anzen)
+
 ## v1.0.0 (2017-02-21)
 
 Features:
