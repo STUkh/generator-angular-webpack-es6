@@ -3,10 +3,10 @@
         <h1>Hello, world!</h1>
         <p>This is a simple angular webpack es6 example, compatible with lazy-loading modules.</p>
 	<% if (props.lodash) { %>
-		<p>Lodash version: {{main.lodash_version}}</p>
+		<p>Lodash version: {{$ctrl.lodash_version}}</p>
 	<% } %>
 	<% if (props.moment) { %>
-		<p>Moment version: {{main.moment_version}}</p>
+		<p>Moment version: {{$ctrl.moment_version}}</p>
 	<% } %>
     <% if (props.ocLazyLoad) { %>
         <p><button class="btn btn-primary btn-lg" role="button" ui-sref="async">Go to the Dark Side! »</button></p>
@@ -14,7 +14,7 @@
         <div class="row">
             <div class="col-md-4">
                 <div>Image source: <b>Model</b></div>
-                <img ng-src="{{main.angularLogo}}" alt="Angular logo">
+                <img ng-src="{{$ctrl.angularLogo}}" alt="Angular logo">
             </div>
             <div class="col-md-4">
                 <div>Image source: <b>URL</b></div>
