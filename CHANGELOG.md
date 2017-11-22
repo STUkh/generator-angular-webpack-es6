@@ -1,3 +1,9 @@
+## v1.0.5 (2017-11-22)
+
+Features:
+
+  - Replace footer directive example with component one. Thanks @dannymy
+
 ## v1.0.4 (2017-09-17)
 
 Features:
