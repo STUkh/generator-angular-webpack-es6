@@ -6,12 +6,12 @@ import  _ from 'lodash/core';
 <% if (props.moment) { %>
 import moment from 'moment';
 <% } %>
-import angularLogo from '_images/angular.png';
 
 export default class MainController {
     constructor($log) {
         'ngInject';
         this.$log = $log;
+        this.awesomeThings = ['Angular', 'Webpack', 'babel'];
     }
 
     $onInit() {
@@ -21,6 +21,5 @@ export default class MainController {
         <% if (props.moment) { %>
         this.moment_version = moment.version;
         <% } %>
-        this.angularLogo = angularLogo;
     }
 }

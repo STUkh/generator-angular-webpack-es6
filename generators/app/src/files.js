@@ -6,6 +6,7 @@ module.exports = function (AngularWebpackES6Generator) {
 
     AngularWebpackES6Generator.prototype.copyFiles = function copyFiles() {
         mkdirp("src");
+        mkdirp("e2e");
         mkdirp("src/assets");
         mkdirp("src/assets/images");
         mkdirp("src/assets/js");
@@ -36,6 +37,22 @@ module.exports = function (AngularWebpackES6Generator) {
         this.fs.copy(
             this.templatePath('_.eslintrc.json'),
             this.destinationPath('.eslintrc.json')
+        );
+
+        this.fs.copy(
+            this.templatePath('_karma.conf.js'),
+            this.destinationPath('karma.conf.js')
+        );
+
+        this.fs.copyTpl(
+            this.templatePath('_spec.bundle.js'),
+            this.destinationPath('spec.bundle.js'),
+            this
+        );
+
+        this.fs.copy(
+            this.templatePath('_protractor.conf.js'),
+            this.destinationPath('protractor.conf.js')
         );
 
         this.fs.copyTpl(
@@ -118,6 +135,12 @@ module.exports = function (AngularWebpackES6Generator) {
         this.fs.copyTpl(
             this.templatePath('_src/_app/_pages/main/**/*'),
             this.destinationPath('src/app/pages/main'),
+            this
+        );
+
+        this.fs.copyTpl(
+            this.templatePath('_e2e/**/*'),
+            this.destinationPath('e2e'),
             this
         );
 
