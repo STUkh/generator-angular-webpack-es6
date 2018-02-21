@@ -39,6 +39,8 @@ npm install -g generator-angular-webpack-es6
 
 ```shell
 
+├── /e2e/                                 # End to End  test folder
+│   └── main.component.spec.js            # End to end test example
 ├── /config/                              # Build config
 │   └── /webpack/                         # Webpack config files
 │       ├── /environments/                # Webpack env dependent configs
@@ -56,6 +58,7 @@ npm install -g generator-angular-webpack-es6
 │   │   ├── /pages/                       # All pages-dependent content should place here
 │   │   │   ├── /main/                    # Main page
 │   │   │   │   ├── /main.controller.js   # Main page Controller
+│   │   │   │   ├── /main.controller.spec.js  # Test file for main page controller
 │   │   │   │   ├── /main.html            # Main page template
 │   │   │   │   ├── /main.module.js       # Main page module
 │   │   │   │   └── /main.route.js        # Main page routes
@@ -77,6 +80,9 @@ npm install -g generator-angular-webpack-es6
 │   └── tpl-index.html                    # Template for html-webpack-plugin that will be transpiled into index.html in /dist
 │── .babelrc                              # Babel config with presets and plugins
 │── .gitignore                            # List of files to ignore by git
+│── karma.conf.js                         # Karma config
+│── protractor.conf.js                    # protractor config
+│── spec.bundle.js                        # The bundle file for including in karma config
 │── package.json                          # The list of project dependencies and NPM scripts
 └── webpack.config.js                     # Bundling and optimization settings for Webpack
 ```
@@ -91,6 +97,39 @@ mkdir my-new-project && cd $_
 ##### Run `yo angular-webpack-es6`, and select desired technologies.
 ##### `npm start` or `npm run dev` - to start development server on http://localhost:8080.
 ##### `npm run build` - To make production-ready build run  after few moments you will see build id `dist` folder.
+
+### Test
+##### Unit testing
+The app uses [Karma](http://karma-runner.github.io/2.0/index.html) to run the unit tests, which you can find near the test target (*.spec.js files). see example test in the above directory structure.
+For running these tests run this command in project directory:
+```
+npm test
+```
+This command will automatically watch for changes that happening in test files
+and rerun the test suite
+To disable the above behaviour , please check package.json file
+
+##### End-to-end testing
+The app uses [Protractor](https://github.com/angular/protractor), an end-to-end test framework designed for AngularJS apps, to the end-to-end tests, which you can find in the e2e folder.
+
+##### Setup development environment for running end-to-end tests
+* First make sure that you did `npm install`.
+* Download the necessary binaries for Selenium Server `npm run webdriver-update`.
+* Open onother command line and run the development server `npm start` and make sure the running port match the baseUrl port in protractor.conf.js file.
+* Finally run `npm run test:e2e`.
+
+##### Example tests
+* Check the example test for unit tests using jasmin api in
+     ```
+     /src/app/pages/main/main.controller.spec.js
+     ```
+    All your unit test files must end with `.spec.js`
+
+* Check the example test for e2e test in e2e directory.
+     ```
+     /e2e/main.component.spec.js
+     ```
+
 
 ### Known bugs:
 > * **Problem**: Webpack2 unable to import function with only export default value.
@@ -112,7 +151,7 @@ mkdir my-new-project && cd $_
 
 #### TODO:
 > * Add .dockerfile
-> * Add example testing environment with karma and protractor
+> * ~~Add example testing environment with karma and protractor~~
 > * Add more dotfiles
 > * ~~Add better examples with lazy-loaded modules~~ Added in 0.1.2
 > * ~~Update to Babel6~~ Added in 0.2.0

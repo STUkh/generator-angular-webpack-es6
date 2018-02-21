@@ -13,7 +13,11 @@
         "no-var": "error"
     },
     "globals": {
-        "angular": false
+        "angular": false,
+        "describe": false,
+        "beforeEach": false,
+        "it": false,
+        "expect": false
     },
     "env": {
         "browser": true,
