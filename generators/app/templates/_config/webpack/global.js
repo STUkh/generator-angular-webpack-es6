@@ -137,7 +137,7 @@ module.exports = function (_path) {
         }
       }),
        new webpack.ProvidePlugin({
-           <% if (props.jQuery) { %>
+           <% if (props.jQuery.key !== 'jqLite') { %>
            $: 'jquery',
            jQuery: 'jquery',
            'window.jQuery': 'jquery',
